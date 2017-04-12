@@ -1,2 +1,2 @@
-# wallpanel-api
-Documenting the common API across all WallPanel apps
+# WallPanel API
+This repo documents the common API/assets across all WallPanel apps
