@@ -8,7 +8,7 @@ eval | Valid JavaScript | ```{"eval": "alert('Hello World!');"}``` | Evaluates J
 relaunch | true | ```{"relaunch": true}``` | Relaunches the dashboard from configured launchUrl
 reload | true | ```{"reload": true}``` | Reloads the current page immediately 
 url | URL to Browse to | ```{"url": "http://<url>"}``` | Browse to a new URL immediately
-wakeScreen | true/false | ```{"wakeScreen": true}``` | Wakes or sleeps the screen immediately
+wake | true/false | ```{"wake": true}``` | Wakes or sleeps the screen immediately
 
 * Commands are constructed via valid JSON. It is possible to string multiple commands together:
   * eg, ```{"clearCache":true, "relaunch":true}```
