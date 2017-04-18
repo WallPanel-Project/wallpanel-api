@@ -1,4 +1,4 @@
-# WallPanel API
+# WallPanel Common API
 
 ## Commands
 Command | Value | Example Payload | Description
