@@ -35,7 +35,7 @@ currentUrl | URL String | ```{"currentUrl":"http://hasbian:8123/states"}``` | Cu
 ## Sensors
 Sensor | Keys | Example | Notes
 -|-|-|-
-battery | unit, value, charging, acPlugged, usbPlugged | ```{""unit":"%", "value":"39", "acPlugged":false, "usbPlugged":true, "charging":true}``` |
+battery | unit, value, charging, acPlugged, usbPlugged | ```{"unit":"%", "value":"39", "acPlugged":false, "usbPlugged":true, "charging":true}``` |
 brightness | unit, value | ```{"unit":"lx", "value":"920"}``` |
 pressure | unit, value | ```{"unit":"??", "value":"21"}``` |
 motion | value | ```{"value": false}``` | Published immediately when motion detected
