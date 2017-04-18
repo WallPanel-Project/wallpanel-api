@@ -38,7 +38,7 @@ Sensor | Keys | Example | Notes
 battery | unit, value, charging, acPlugged, usbPlugged | ```{""unit":"%", "value":"39", "acPlugged":false, "usbPlugged":true, "charging":true}``` |
 brightness | unit, value | ```{"unit":"lx", "value":"920"}``` |
 pressure | unit, value | ```{"unit":"??", "value":"21"}``` |
-motion | value | ```{"value": false}``` | This is published immediately on motion detected
+motion | value | ```{"value": false}``` | Published immediately when motion detected
 
 *NOTE:* Sensor values are device specific. Not all devices will publish all sensor values.
 
