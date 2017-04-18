@@ -23,9 +23,10 @@ wake | true/false | ```{"wake": true}``` | Wakes or sleeps the screen immediatel
 Key | Value | Example | Description
 -|-|-|-
 currentUrl | URL String | ```{"currentUrl":"http://hasbian:8123/states"}``` | Current URL the Dashboard is displaying
+screenOn | true/false | ```{"screenOn":true}``` | If the screen is currently on
 
 * State values are presented together as a JSON block
-  * eg, ```{"currentUrl":"http://hasbian:8123/states"}```
+  * eg, ```{"currentUrl":"http://hasbian:8123/states","screenOn":true}```
 * For REST
   * GET the JSON from URL ```http://[mywallpanel]/api/state```
 * For MQTT
