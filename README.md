@@ -1,7 +1,7 @@
 # WallPanel Common API
 
 ## Commands
-Command | Value | Example Payload | Description
+Key | Value | Example Payload | Description
 -|-|-|-
 clearCache | true | ```{"clearCache": true}``` | Clears the browser cache
 eval | Valid JavaScript | ```{"eval": "alert('Hello World!');"}``` | Evaluates Javascript in the dashboard
@@ -20,7 +20,7 @@ wake | true/false | ```{"wake": true}``` | Wakes or sleeps the screen immediatel
   * Publish a JSON payload to this topic
 
 ## State
-Variable | Value | Example | Description
+Key | Value | Example | Description
 -|-|-|-
 currentUrl | URL String | ```{"currentUrl":"http://hasbian:8123/states"}``` | Current URL the Dashboard is displaying
 
@@ -31,14 +31,25 @@ currentUrl | URL String | ```{"currentUrl":"http://hasbian:8123/states"}``` | Cu
 * For MQTT
   * WallPanel publishes state to topic ```[baseTopic]/state```
     * Default Topic: ```wallpanel/mywallpanel/state```
-  * The retain flag is used when publishing
 
 ## Sensors
-TODO
+Sensor | Keys | Example | Notes
+-|-|-|-
+battery | unit, value, charging, acPlugged, usbPlugged | ```{""unit":"%", "value":"39", "acPlugged":false, "usbPlugged":true, "charging":true}``` |
+brightness | unit, value | ```{"unit":"lx", "value":"920"}``` |
+pressure | unit, value | ```{"unit":"??", "value":"21"}``` |
+motion | value | ```{"value": false}``` | This is published immediately on motion detected
 
+*NOTE:* Sensor values are device specific. Not all devices will publish all sensor values.
+
+* Sensor values are constructued as JSON per the above table
+* For MQTT
+  * WallPanel publishes all sensors to MQTT under ```[baseTopic]/sensor```
+  * Each sensor publishes to a subtopic based on the type of sensor
+    * Example: ```wallpanel/mywallpanel/sensor/battery```
 
 ## Configuration
-Config Key | Value | Behavior | Default
+Key | Value | Behavior | Default
 -|-|-|-
 app.deviceId | String | The unique identifier for this WallPanel device | mywallpanel
 app.preventSleep | true/false | Prevents the screen from turning off | false
@@ -61,4 +72,4 @@ mqtt.username | String | The username to connect to MQTT with (or blank) |
 mqtt.password | String | The password to connect to MQTT with (or blank) | 
 mqtt.sensorFrequency | Int | The frequency to post sensor data in seconds, or 0 to never post | 0 
 
-TODO: Currently these are configured locally, but the API will develop means to work with configurations externally
+*NOTE:* Currently these are only configured locally, but the roadmap is considering external configuration (pull or push?) options
