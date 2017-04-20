@@ -13,7 +13,7 @@ wake | true/false | ```{"wake": true}``` | Wakes or sleeps the screen immediatel
 * Commands are constructed via valid JSON. It is possible to string multiple commands together:
   * eg, ```{"clearCache":true, "relaunch":true}```
 * For REST
-  * POST the JSON to URL ```http://[mywallpanel]/api/command```
+  * POST the JSON to URL ```http://[mywallpanel]:2971/api/command```
 * For MQTT
   * WallPanel subscribes to topic ```[baseTopic]/command```
     * Default Topic: ```wallpanel/mywallpanel/command```
@@ -28,7 +28,7 @@ screenOn | true/false | ```{"screenOn":true}``` | If the screen is currently on
 * State values are presented together as a JSON block
   * eg, ```{"currentUrl":"http://hasbian:8123/states","screenOn":true}```
 * For REST
-  * GET the JSON from URL ```http://[mywallpanel]/api/state```
+  * GET the JSON from URL ```http://[mywallpanel]:2971/api/state```
 * For MQTT
   * WallPanel publishes state to topic ```[baseTopic]/state```
     * Default Topic: ```wallpanel/mywallpanel/state```
@@ -63,7 +63,8 @@ camera.motionLeniency | int | The leniency on changes in pictures between polls 
 camera.motionMinLuma | int | The minimum light needed to perform motion detection | 1000
 camera.motionWake | true/false | If motion activity should wake the device | true
 PLANNED: camera.webcamEnabled | true/false | If the device camera is used as a webcam | false
-PLANNED: http.enabled | true/false | Switch for REST(HTTP) being enabled | false
+http.enabled | true/false | Switch for REST(HTTP) being enabled | false
+http.port | int | The port to listen on for REST(HTTP) | 2971
 mqtt.enabled | true/false | Switch for MQTT being enabled | false 
 mqtt.serverName | String | The hostname/IP of the MQTT server | mqtt 
 mqtt.serverPort | Int | The port number for TCP MQTT | 1883 
