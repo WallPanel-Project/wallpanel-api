@@ -5,6 +5,7 @@ Key | Value | Example Payload | Description
 -|-|-|-
 clearCache | true | ```{"clearCache": true}``` | Clears the browser cache
 eval | JavaScript | ```{"eval": "alert('Hello World!');"}``` | Evaluates Javascript in the dashboard
+audio | URL | ```{"audio": "http://<url>"}``` | Play the audio specified by the URL immediately
 relaunch | true | ```{"relaunch": true}``` | Relaunches the dashboard from configured launchUrl
 reload | true | ```{"reload": true}``` | Reloads the current page immediately 
 url | URL | ```{"url": "http://<url>"}``` | Browse to a new URL immediately
